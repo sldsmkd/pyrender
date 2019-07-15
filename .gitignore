@@ -1,3 +1,6 @@
-/pyrender/features/*
 /venv/*
 /.vscode/*
+/build/*
+/dist/*
+pyrender.egg-info/*
+*/__pycache__/*
