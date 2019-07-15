@@ -20,7 +20,6 @@ class Tuple(object):
         return self.__class__(res[0], res[1], res[2], res[3])
 
     def __mul__(self, scalar):
-        print("here")
         res = self._tuple * scalar
         return self.__class__(res[0], res[1], res[2], res[3])
 
