@@ -1,0 +1,3 @@
+/pyrender/features/*
+/venv/*
+/.vscode/*
