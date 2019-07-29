@@ -4,3 +4,4 @@
 /dist/*
 pyrender.egg-info/*
 */__pycache__/*
+*.ppm
