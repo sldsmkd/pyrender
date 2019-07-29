@@ -34,11 +34,14 @@ class PyrenderTuple():
     def __sub__(self, other):
         return self._construct(self._data - other.__repr__())
 
-    def __mul__(self, multiplyer):
+    def __mul__(self, multiplier):
         try:
-            return self._construct(self._data * multiplyer)
+            return self._construct(self._data * multiplier)
         except TypeError:
-            return self._construct(self._data * multiplyer.__repr__())
+            return self._construct(self._data * multiplier.__repr__())
+    
+    def __matmul__(self, other):
+        return np.dot(self._data, other.__repr__())
 
     def __truediv__(self, divisor):
         try:

@@ -50,18 +50,3 @@ class Canvas():
         ppm += create_header()
         ppm += create_body()
         return ppm
-
-
-# c = Canvas(5, 3)
-# print(c.ppm)
-
-
-#   Given c ← Canvas(5, 3)
-#   When ppm ← canvas_to_ppm(c)
-#   Then lines 1-3 of ppm are
-#     """
-#     P3
-#     5 3
-#     255
-#     """
-
