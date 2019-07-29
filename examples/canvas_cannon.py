@@ -1,4 +1,4 @@
-from pyrender.tuples import Point, Vector
+from pyrender.tuples import Color, Point, Vector
 from pyrender.canvas import Canvas
 
 
@@ -26,9 +26,20 @@ def tick(proj: Projectile, env: Environment):
     return Projectile(position, velocity)
 
 
-p = Projectile(Point(0, 1, 0), Vector(1, 1, 0).normal)
-e = Environment(Vector(0, -0.1, 0), Vector(-0.01, 0, 0))
+start = Point(0, 1, 0)
+velocity = Vector(1, 1.8, 0).normal * 11.25
+p = Projectile(start, velocity)
+
+gravity = Vector(0, -0.1, 0)
+wind = Vector(-0.01, 0, 0)
+
+e = Environment(gravity, wind)
+
+c = Canvas(900, 550)
+color = Color(1.0, 0, 0)
 
 while p.position.y >= 0:
-    print(p.position)
+    c.set_pixel(int(p.position.x), 500 - int(p.position.y), color)
     p = tick(p, e)
+
+print(c.ppm)
